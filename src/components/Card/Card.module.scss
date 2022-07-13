@@ -1,0 +1,28 @@
+.card {
+  background-color: #fff;
+  max-width: 502px;
+  border: 1px solid #979797;
+  box-shadow: 0 2px 8px rgba(0, 0, 0 , .10);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 15px;
+  }
+  .point {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
