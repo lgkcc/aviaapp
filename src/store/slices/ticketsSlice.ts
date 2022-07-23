@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-type SegmentsType = {
+export type SegmentsType = {
   origin: string
   destination: string
   date: string
@@ -70,7 +70,8 @@ const ticketsSlice = createSlice({
             filtersArr.push(
               ...arrForFilter.filter(
                 (ticket: TicketItems) =>
-                  ticket.segments[0].stops.length ===
+                  ticket.segments[0].stops.length +
+                    ticket.segments[1].stops.length ===
                   action.payload.filters[count]
               )
             )

@@ -1,15 +1,24 @@
 import React from 'react'
 import { format } from 'date-fns'
 
+import { SegmentsType } from '../../store/slices/ticketsSlice'
+
 import classes from './Card.module.scss'
-const Card: React.FC<any> = ({ price, segments, carrier }) => {
+
+interface ICardProps {
+  price: number
+  segments: SegmentsType[]
+  carrier: string
+}
+
+const Card: React.FC<ICardProps> = ({ price, segments, carrier }) => {
   function getTimeFromMin(min: number) {
     const hours = Math.trunc(min / 60)
     const minutes = min % 60
     return `${hours}ч ${minutes}м`
   }
-  function formatDate(date: any) {
-    return format(new Date(date), 'MMM-dd-yyyy, mm:HH:ss')
+  function formatDate(date: string) {
+    return format(new Date(date), 'MMM dd yyyy')
   }
   return (
     <div className={classes.card}>
@@ -18,7 +27,7 @@ const Card: React.FC<any> = ({ price, segments, carrier }) => {
         <img src={`//pics.avs.io/99/36/${carrier}.png`} alt="logo" />
       </header>
       <div className={classes.info}>
-        {segments.map((param: any, index: number) => (
+        {segments.map((param, index: number) => (
           <React.Fragment key={index}>
             <div className={classes.point}>
               <span>

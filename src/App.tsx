@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
-import Main from './pages/TicketList/TicketList'
+import Main from './components/TicketList/TicketList'
 import Header from './components/Header/Header'
 import {
   fetchBySearchId,

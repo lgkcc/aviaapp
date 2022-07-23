@@ -5,7 +5,7 @@ import { updateRangeTickets } from '../../store/slices/ticketsSlice'
 
 import classes from './Button.module.scss'
 
-const Button: React.FC<any> = () => {
+const Button: React.FC = () => {
   const dispatch = useAppDispatch()
   return (
     <button

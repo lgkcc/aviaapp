@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import Card from '../Card/Card'
 import { RootState } from '../../store/store'
 import { Status, TicketItems } from '../../store/slices/ticketsSlice'
-import Skeleton from '../Card/Skeleton'
+import Skeleton from '../Card/Skeleton/Skeleton'
 
 const Tickets: React.FC = () => {
   const { rangeTickets, isLoading, sortAndFiltersTickets } = useSelector(
